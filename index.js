@@ -24,13 +24,13 @@ const addNewGoal = () => {
     
     
      // Check for duplicates
-     const existingGoals = goalList.querySelectorAll('li');
-     for (let i = 0; i < existingGoals.length; i++) {
-         if (existingGoals[i].textContent === goalInput) {
-             alert('This goal already exists!');
-             return; 
-         }
+     const goalItems = goalList.querySelectorAll("li");
 
+    for (let i = 0; i < goalItems.length; i++) {
+        if (goalItems[i].textContent === goalInput) {
+            alert("Duplicate goal detected!");
+            return;
+        }
       
      // If it's not a duplicate, proceed with adding it as a new goal
          const newGoal = document.createElement('li');
