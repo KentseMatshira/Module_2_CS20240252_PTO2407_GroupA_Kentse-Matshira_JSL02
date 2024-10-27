@@ -22,6 +22,14 @@ const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
+    
+     // Check for duplicates
+     const existingGoals = goalList.querySelectorAll('li');
+     for (let i = 0; i < existingGoals.length; i++) {
+         if (existingGoals[i].textContent === goalInput) {
+             alert('This goal already exists!');
+             return; 
+         }
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
     
