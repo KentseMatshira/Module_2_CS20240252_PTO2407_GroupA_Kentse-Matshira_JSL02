@@ -30,6 +30,13 @@ const addNewGoal = () => {
              alert('This goal already exists!');
              return; 
          }
+
+         const newGoal = document.createElement('li');
+     newGoal.textContent = goalInput;
+     goalList.appendChild(newGoal);
+ 
+     newGoal.addEventListener('click', () => {
+         goalList.removeChild(newGoal);
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
     
